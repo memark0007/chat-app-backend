@@ -1,9 +1,13 @@
-# Node.js
+# สำหรับโปรเจ็กต์ทั้งหมด
 node_modules/
-npm-debug.log
-yarn-error.log
 .env
-
-# Logs
 logs
 *.log
+
+# สำหรับ Backend
+backend/dist/
+backend/*.tsbuildinfo
+
+# สำหรับ Frontend
+frontend/build/
+frontend/node_modules/
