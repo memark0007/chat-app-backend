@@ -21,10 +21,19 @@ io.on('connection', (socket) => {
     io.emit('receive_message', data);
   });
 
+  socket.on('typing', (username: string) => {
+    socket.broadcast.emit('display_typing', username);
+  });
+
+  socket.on('stop_typing', () => {
+    socket.broadcast.emit('hide_typing');
+  });
+
   socket.on('disconnect', () => {
     console.log('🔴 ผู้ใช้ตัดการเชื่อมต่อ:', socket.id);
   });
 });
+
 
 server.listen(4000, () => {
   console.log('✅ เซิร์ฟเวอร์กำลังรันบนพอร์ต 4000');
